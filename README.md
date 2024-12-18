@@ -10,6 +10,10 @@
 - **View Page Source**: Inspect and view the source code of any webpage with syntax highlighting.
 - **Open Source**: Fully customizable and open for contributions.
 
+## Give Feedback
+
+I’d love to hear your thoughts! If you have any feedback, suggestions, or tips on how I can improve this project, feel free to share. Your input will help make the browser even better!
+
 ## Installation
 
 To set up the browser on your machine, follow these steps:
@@ -19,15 +23,5 @@ To set up the browser on your machine, follow these steps:
 ```bash
 git clone https://github.com/your-repo/anonymous-python-browser.git
 cd anonymous-python-browser
-
-### 2. Install Requirements
-```bash
 pip install -r requirements.txt
-
-### 3. Run Browser
-```bash
 python anonymous_browser.py
-
-### 4. Give Feedback
-```Text
-Pls Give Me Some Feedback Or What i could do better <3
