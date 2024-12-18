@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anonymous Python Browser</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #121212;
+            color: #FFFFFF;
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin: 20px 0;
+            color: #F0F0F0;
+            text-align: center;
+        }
+
+        p {
+            font-size: 1.2rem;
+            margin: 15px 20px;
+            text-align: center;
+            color: #CCCCCC;
+        }
+
+        .emblem {
+            width: 240px;
+            height: auto;
+            margin-bottom: 20px;
+        }
+
+        .btn-container {
+            margin-top: 20px;
+        }
+
+        button {
+            background-color: #2C2C2C;
+            color: #FFFFFF;
+            padding: 12px 24px;
+            font-size: 1rem;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #555555;
+        }
+
+        footer {
+            margin-top: auto;
+            padding: 10px;
+            text-align: center;
+            font-size: 0.9rem;
+            color: #666666;
+        }
+
+        .search-container {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .search-bar {
+            background-color: #2C2C2C;
+            color: #FFFFFF;
+            border: 1px solid #444444;
+            padding: 10px 15px;
+            width: 300px;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+
+        .search-bar:focus {
+            outline: none;
+            border-color: #666666;
+        }
+
+        .search-btn {
+            background-color: #2C2C2C;
+            color: #FFFFFF;
+            padding: 10px 15px;
+            font-size: 1rem;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-left: 10px;
+            transition: background-color 0.3s ease;
+        }
+
+        .search-btn:hover {
+            background-color: #555555;
+        }
+    </style>
+</head>
+<body>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Anonymous_emblem.svg/240px-Anonymous_emblem.svg.png" 
+         alt="Anonymous Emblem" 
+         class="emblem">
+    <h1>Anonymous Python Browser</h1>
+    <p>
+        Welcome to the Anonymous Python Browser, an open-source, privacy-focused browsing experience.
+        This browser is designed to prioritize your anonymity, security, and modern web interaction.
+    </p>
+    <p>
+        With features like tabbed browsing, integrated privacy-focused search, and no data tracking,
+        you can browse with confidence knowing your information is secure.
+    </p>
+
+    <!-- Search Bar Section -->
+    <div class="search-container">
+        <input type="text" id="search-query" class="search-bar" placeholder="Search with DuckDuckGo" />
+        <button class="search-btn" onclick="performSearch()">Search</button>
+    </div>
+
+    <div class="btn-container">
+        <button onclick="openGitHub()">Visit Our GitHub</button>
+    </div>
+
+    <footer>
+        Built with ❤️ for privacy enthusiasts. Open-source and customizable.
+    </footer>
+
+    <script>
+        function openGitHub() {
+            // This function will send the signal to Python to open the GitHub page
+            fetch('http://localhost:5000/open-github').catch(console.error);
+        }
+
+        function performSearch() {
+            // Get the search query
+            const query = document.getElementById("search-query").value.trim();
+
+            // If the query is empty, do nothing
+            if (query === "") {
+                return;
+            }
+
+            // Redirect to DuckDuckGo search with the query
+            const searchUrl = `https://duckduckgo.com/?q=${encodeURIComponent(query)}`;
+            window.open(searchUrl, "_self");  // Open the search in the current window
+        }
+    </script>
+</body>
+</html>
