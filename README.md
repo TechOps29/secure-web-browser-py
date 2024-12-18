@@ -21,7 +21,7 @@ To set up the browser on your machine, follow these steps:
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/your-repo/anonymous-python-browser.git
+git clone https://github.com/TechOps29/secure-web-browser-py.git
 cd anonymous-python-browser
 pip install -r requirements.txt
 python anonymous_browser.py
